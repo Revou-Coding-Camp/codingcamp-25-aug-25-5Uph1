@@ -1,0 +1,324 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigasi Bar */
+nav{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    position: fixed;  
+    top: 0;            
+    left: 0;
+    right: 0;
+    z-index: 1000;     
+}
+
+.icon {
+    border-radius: 50%;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav img {
+    width: 50px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 8px 0;
+    transition: all;
+    transition-duration: 300ms;
+    border-bottom: rgba(255, 255, 255, 0) 2px solid;
+}
+
+.menu li a:hover {
+    border-bottom: #ffd369 2px solid;
+    color: #ffd369;
+}
+
+.tombol{
+	display: none;
+	color: rgb(255, 255, 255);
+	font-size: 20pt;			
+}
+ 
+.tombol:hover{
+	cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: none;
+	}
+ 
+	.menu.aktif{
+		display:inline-block;
+		position: absolute;
+		top: 64px;
+		background: #101010;
+		padding: 20px 50px;
+		right: 0;
+		left: 0;
+	}
+
+	.menu.aktif li a{
+		padding: 10px;
+		display: inline-block !important;
+	}
+ 
+	.tombol {
+		display: block;
+	}
+
+    .contain {
+        max-width: 100%;
+        max-height: none;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+
+    .kolom-karakter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 50px;  /* space kiri-kanan tambahan */
+    }
+
+    .karakter-card img.karakter {
+        margin: 0 0 15px 0;      
+        width: 100px;             
+    }
+}
+
+@media screen and (max-width: 859px) {
+  .contain.message {
+    flex-direction: column;
+  }
+}
+
+/* header */
+header {
+    margin-top: 60px;
+}
+
+.contain {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.background {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/Wallpaper 2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hitam{
+    background-color: rgb(18, 18, 18);
+}
+
+/* Profile */
+.kolom-karakter {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.karakter-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 700px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-align: left;
+}
+
+.karakter-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.karakter {
+  width: 150px;
+  height: auto;
+  image-rendering: pixelated; 
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.karakter-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: #ffd369;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.karakter-info p {
+  font-size: 1rem;
+  color: #eee;
+  line-height: 1.5;
+}
+
+/* Message Us */
+.contain.message {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  width: 100%;        
+  max-width: 400px;   
+  height: 30px;       
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  width: 100%;        
+  max-width: 400px;   
+  padding: 8px 14px;
+  align-items: center;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;   /* biar teks tidak turun */
+}
+
+.radio-option input[type="radio"] {
+  accent-color: #ffd369;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.radio-option span {
+  color: #000000;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-group textarea {
+  width: 100%;        
+  max-width: 400px;   
+  height: 200px;       
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.form-group button {
+  width: 100%;        
+  max-width: 400px;   
+  height: 30px;       
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.submit {
+  background: #ffd369;
+  color: black;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit:hover {
+  color: #ffcb69;
+  background: linear-gradient(135deg, #0f0f0f, #000000a3); /* efek hover */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.box-message {
+  display: none;
+  border: #000000 solid 1px;
+  flex: 1;
+  margin-left: 15%;
+  margin-top: 100px;
+  margin-right: 50%;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 100px;
+  padding-bottom: 20px;
+  min-width: 250px;
+  height: 130px;
+  border-radius: 10px;
+}
+
+.box-message.aktif{
+    display: block;
+}
+
+/* footer */
+footer {
+  background: #000000;        
+  color: #ffd369;              
+  text-align: center;         
+  padding: 15px 0;            
+  font-size: 14px;             
+  font-weight: bold;
+  letter-spacing: 1px;         
+  border-top: 2px solid #000000; 
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+footer:hover {
+  background: #ffcb69;
+  border-top: 2px solid #ffcb69; 
+  color: #333;          
+}
